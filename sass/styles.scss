@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Tahoma, sans-serif;
+}
+
+@mixin flex-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin transition($name: all ,$duration: .5s, $timing: ease-in-out) {
+    transition: $duration $timing;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: cadetblue;
+    color: white;
+}
+
+.container {
+    border-radius: 5px;
+    @include flex-center();
+    padding: 20px;
+}
+
+label {
+    font-size: 19px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+input {
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    padding: 10px;
+    outline: none;
+    margin-bottom: 20px;
+
+    &:focus {
+        border: 2px solid rgb(0, 98, 255);
+    }
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 18.453px;
+    cursor: pointer;
+    @include transition(transform);
+    box-shadow: 2px 4px 10px rgb(6, 49, 95);
+
+    &:hover {
+        transform: scale(1.05);
+        @include transition(transform);
+    }
+}
+
+#result {
+    font-weight: bolder;
+    margin-top: 12px;
+    text-align: center;
+}
